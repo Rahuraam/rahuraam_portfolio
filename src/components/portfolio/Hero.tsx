@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin } from "lucide-react";
@@ -16,10 +15,14 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="mb-8">
-          {/* Profile Picture Placeholder */}
-          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
-            <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-              <div className="text-6xl font-bold text-cyan-400">R</div>
+          {/* Profile Picture */}
+          <div className="w-48 h-48 mx-auto mb-8 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1 shadow-2xl">
+            <div className="w-full h-full rounded-full overflow-hidden bg-gray-800">
+              <img 
+                src="/lovable-uploads/47723116-d2e8-4980-8503-35368211fd48.png" 
+                alt="Rahuraam R - Full Stack Developer"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
           
