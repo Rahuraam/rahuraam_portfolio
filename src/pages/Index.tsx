@@ -11,69 +11,89 @@ const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = [
-    "All", "Pizza", "Burgers", "Asian", "Mexican", "Italian", "Desserts", "Healthy"
+    "All", "Dosa & Idli", "Snacks", "Rice Items", "Curries", "Sweets", "Beverages", "Tiffin"
   ];
 
   const restaurants = [
     {
       id: 1,
-      name: "Mario's Pizza Palace",
-      cuisine: "Italian",
+      name: "Saravana Bhavan",
+      cuisine: "South Indian",
       rating: 4.8,
       deliveryTime: "25-35",
       deliveryFee: 2.99,
-      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
-      category: "Pizza"
+      image: "/lovable-uploads/117ac463-e97b-4557-996b-c83597f15666.png",
+      category: "Dosa & Idli"
     },
     {
       id: 2,
-      name: "Burger Paradise",
-      cuisine: "American",
-      rating: 4.6,
+      name: "Murugan Idli Shop",
+      cuisine: "South Indian",
+      rating: 4.7,
       deliveryTime: "20-30",
       deliveryFee: 1.99,
-      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop",
-      category: "Burgers"
+      image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=300&fit=crop",
+      category: "Tiffin"
     },
     {
       id: 3,
-      name: "Dragon Wok",
-      cuisine: "Chinese",
-      rating: 4.7,
+      name: "Aryaas Restaurant",
+      cuisine: "Kerala",
+      rating: 4.6,
       deliveryTime: "30-40",
       deliveryFee: 3.49,
-      image: "https://images.unsplash.com/photo-1563379091339-03246963d24a?w=400&h=300&fit=crop",
-      category: "Asian"
+      image: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop",
+      category: "Rice Items"
     },
     {
       id: 4,
-      name: "Taco Fiesta",
-      cuisine: "Mexican",
+      name: "Chutney Chang",
+      cuisine: "South Indian",
       rating: 4.5,
       deliveryTime: "15-25",
       deliveryFee: 2.49,
-      image: "https://images.unsplash.com/photo-1565299585323-38174c26d62a?w=400&h=300&fit=crop",
-      category: "Mexican"
+      image: "/lovable-uploads/caa3e81a-734b-49f8-b2e4-2e5fa4270a93.png",
+      category: "Snacks"
     },
     {
       id: 5,
-      name: "Green Garden",
-      cuisine: "Healthy",
+      name: "Dakshin Restaurant",
+      cuisine: "South Indian",
       rating: 4.9,
-      deliveryTime: "20-30",
-      deliveryFee: 2.99,
-      image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop",
-      category: "Healthy"
+      deliveryTime: "35-45",
+      deliveryFee: 4.99,
+      image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?w=400&h=300&fit=crop",
+      category: "Curries"
     },
     {
       id: 6,
-      name: "Sweet Dreams Bakery",
-      cuisine: "Desserts",
-      rating: 4.8,
-      deliveryTime: "35-45",
-      deliveryFee: 1.99,
-      image: "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop",
-      category: "Desserts"
+      name: "Hotel Annapoorna",
+      cuisine: "Tamil Nadu",
+      rating: 4.4,
+      deliveryTime: "25-35",
+      deliveryFee: 2.99,
+      image: "/lovable-uploads/42e7faa3-32b9-4fd5-986b-650cb587f038.png",
+      category: "Snacks"
+    },
+    {
+      id: 7,
+      name: "Mysore Pak House",
+      cuisine: "Karnataka",
+      rating: 4.6,
+      deliveryTime: "40-50",
+      deliveryFee: 3.99,
+      image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=400&h=300&fit=crop",
+      category: "Sweets"
+    },
+    {
+      id: 8,
+      name: "Filter Coffee Corner",
+      cuisine: "South Indian",
+      rating: 4.3,
+      deliveryTime: "15-20",
+      deliveryFee: 1.49,
+      image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400&h=300&fit=crop",
+      category: "Beverages"
     }
   ];
 
@@ -94,7 +114,7 @@ const Index = () => {
               <div className="bg-orange-500 text-white p-2 rounded-lg">
                 <ShoppingCart className="h-6 w-6" />
               </div>
-              <h1 className="text-2xl font-bold text-gray-900">FoodieExpress</h1>
+              <h1 className="text-2xl font-bold text-gray-900">South Indian Express</h1>
             </div>
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2 text-gray-600">
@@ -111,10 +131,10 @@ const Index = () => {
       <section className="bg-gradient-to-r from-orange-500 to-red-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Delicious food,<br />delivered fast
+            Authentic South Indian,<br />delivered fresh
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Your favorite restaurants, right at your doorstep
+            From crispy dosas to filter coffee, taste the heritage
           </p>
           
           {/* Search Bar */}
@@ -122,7 +142,7 @@ const Index = () => {
             <div className="relative">
               <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
               <Input
-                placeholder="Search for restaurants or cuisines..."
+                placeholder="Search for dosa, idli, sambar..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="pl-12 pr-4 py-6 text-lg text-gray-900 bg-white border-0 rounded-xl shadow-lg"
