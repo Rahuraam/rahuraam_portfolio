@@ -1,10 +1,21 @@
+
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
+  const handleResumeDownload = () => {
+    // Create a temporary link element to trigger download
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // You'll need to add your resume file to the public folder
+    link.download = 'Rahuraam_R_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/20 to-blue-600/20"></div>
@@ -46,17 +57,28 @@ const Hero = () => {
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3"
+            onClick={handleResumeDownload}
           >
             <Download className="mr-2 h-5 w-5" />
             Download Resume
           </Button>
           
           <div className="flex gap-4">
-            <Button variant="outline" size="lg" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
+              onClick={() => window.open('https://github.com/Rahuraam', '_blank')}
+            >
               <Github className="mr-2 h-5 w-5" />
               GitHub
             </Button>
-            <Button variant="outline" size="lg" className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-gray-900"
+              onClick={() => window.open('https://linkedin.com/in/rahuraam-r-0b3a65283', '_blank')}
+            >
               <Linkedin className="mr-2 h-5 w-5" />
               LinkedIn
             </Button>

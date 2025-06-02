@@ -142,10 +142,10 @@ const Index = () => {
               <a href="tel:+918807639606" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Phone className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://github.com/Rahuraam" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors">
+              <a href="https://linkedin.com/in/rahuraam-r-0b3a65283" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-cyan-400 transition-colors">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
