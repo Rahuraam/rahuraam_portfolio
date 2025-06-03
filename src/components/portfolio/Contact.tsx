@@ -1,5 +1,4 @@
-
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, RotateCcw } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -90,6 +89,20 @@ const Contact = () => {
       return false;
     }
     return true;
+  };
+
+  const handleReset = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
+    toast({
+      title: "Form Reset",
+      description: "All fields have been cleared",
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -293,24 +306,37 @@ Submitted at: ${new Date().toLocaleString()}
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white disabled:opacity-50"
-                    size="lg"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="mr-2 h-5 w-5" />
-                        Send Message
-                      </>
-                    )}
-                  </Button>
+                  <div className="flex gap-4">
+                    <Button 
+                      type="button"
+                      onClick={handleReset}
+                      variant="outline"
+                      className="flex-1 border-gray-600 text-gray-300 hover:bg-gray-700 hover:text-white"
+                      size="lg"
+                    >
+                      <RotateCcw className="mr-2 h-5 w-5" />
+                      Reset
+                    </Button>
+
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white disabled:opacity-50"
+                      size="lg"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="mr-2 h-5 w-5" />
+                          Send Message
+                        </>
+                      )}
+                    </Button>
+                  </div>
                 </form>
               </CardContent>
             </Card>
