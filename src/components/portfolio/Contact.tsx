@@ -26,6 +26,12 @@ const Contact = () => {
     }));
   };
 
+  const validateName = (name: string) => {
+    // Allow only letters, spaces, hyphens, and apostrophes (common in names)
+    const nameRegex = /^[a-zA-Z\s\-']+$/;
+    return nameRegex.test(name);
+  };
+
   const validateForm = () => {
     if (!formData.firstName.trim()) {
       toast({
@@ -35,10 +41,26 @@ const Contact = () => {
       });
       return false;
     }
+    if (!validateName(formData.firstName.trim())) {
+      toast({
+        title: "Error",
+        description: "First name should only contain letters, spaces, hyphens, and apostrophes",
+        variant: "destructive",
+      });
+      return false;
+    }
     if (!formData.lastName.trim()) {
       toast({
         title: "Error",
         description: "Last name is required",
+        variant: "destructive",
+      });
+      return false;
+    }
+    if (!validateName(formData.lastName.trim())) {
+      toast({
+        title: "Error",
+        description: "Last name should only contain letters, spaces, hyphens, and apostrophes",
         variant: "destructive",
       });
       return false;
