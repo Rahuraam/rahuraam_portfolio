@@ -61,7 +61,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
           <Button 
             size="lg" 
             className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-3 transform hover:scale-105 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
@@ -91,12 +91,6 @@ const Hero = () => {
               LinkedIn
             </Button>
           </div>
-        </div>
-
-        {/* Enhanced scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-1 h-16 bg-gradient-to-b from-cyan-400 to-transparent rounded-full opacity-70 hover:opacity-100 transition-opacity duration-300"></div>
-          <div className="w-3 h-3 bg-cyan-400 rounded-full mx-auto mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
